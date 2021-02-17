@@ -1,0 +1,14 @@
+.bttn{
+    text-align: center;
+    font-family: 'Holtwood One SC', serif;
+    color: red;
+    width: 30%;
+    height: 50%;
+    display: inline-block;
+    border-radius: 50%;
+    font-size: 100px;
+    border-color: white;
+    border-style: double;
+    border-width: 10px;
+    border-color: red;
+}
