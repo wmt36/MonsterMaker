@@ -15,12 +15,14 @@ export default function athlete() {
         <hr></hr>
       </div>
       <div className="text-center">
+      <br></br>
+          <PlayerCard />
+          <br></br>
         <a className="bttn btn-black btn-lg" href="/" role="button">
           MM
         </a> 
         <br></br>
-        <br></br>
-          <PlayerCard />
+        
       </div>
     </div>
         </div>

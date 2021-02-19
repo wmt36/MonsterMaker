@@ -1,4 +1,10 @@
 .card{
- max-width: 540px;
+ max-width: 740px;
  font-family: 'Holtwood One SC', serif;
+}
+.card-body{
+    background-color: red;
+}
+.row{
+    position: center;
 }

@@ -1,9 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const cors = require('cors')
 const PORT = process.env.PORT || 3001;
-// const routes = require('./routes')
-
+const DB = require("./models")
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -12,8 +12,9 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client"));
 }
+app.use(cors());
 
-// app.use(routes) 
+
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/MM",{
@@ -24,6 +25,17 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/MM",{
 }).then(() => {
   console.log('mongoDB connected')
   
+});
+//connecting to the database
+app.get('/api/mms/', ({body}, res) => {
+    DB.find({}, (err, data) => {
+        if(err){
+            res.send(err)
+        } else{
+            res.json(data)
+        }
+    })
+    
 });
 
 // Start the API server

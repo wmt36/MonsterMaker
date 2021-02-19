@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const DB = require("../models");
 
 
+
 mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/MM"
 );
@@ -168,4 +169,5 @@ const playerSeed = [
         link: "https://www.instagram.com/big_olu55/",
         sport: "Football",
     },
-]
+];
+
